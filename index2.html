@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div_mostraNumero"></div>
+
+    <button id="btn_invia" onclick="inviareMessaggio()">invia</button>
+    <input type="text" id="input_messaggi">
+    <div id="div_mostra"></div>
+
+    <script>
+        
+        //random tra minNum e maxNum
+        function randomNum(minNum,maxNum){ 
+            switch(arguments.length){ 
+                case 1: 
+                    return parseInt(Math.random()*minNum+1,10); 
+                break; 
+                case 2: 
+                    return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+                break; 
+                    default: 
+                        return 0; 
+                    break; 
+            } 
+        } 
+
+        //numero casuale
+        var numeroMin = 1;
+        var numeroMax = 100;
+        var numeroIndovina = randomNum(numeroMin, numeroMax);
+
+        var btnInvia = document.getElementById('btn_invia');
+        var divMostra = document.getElementById('div_mostra');
+        var inputMessaggi = document.getElementById('input_messaggi');
+        var divMostraNumero = document.getElementById('div_mostraNumero');
+
+        divMostraNumero.innerHTML = "Il numero da indovinare è: " + numeroIndovina;
+
+        //variabile che contiene i messaggi inviati da client
+        var messaggio = 0;
+
+        
+        function inviareMessaggio(){
+            messaggio = inputMessaggi.value
+            messaggio = Number(messaggio);
+            divMostra.innerHTML = messaggio + "--------" +typeof(messaggio);
+
+
+            if(isNaN(messaggio)){//isNaN: se non è un numero, ritorna true
+                alert("Devi inserire un numero")
+            }
+            else if(messaggio===0){
+                alert("Devi inserire un numero tra " + numeroMin + " e " + numeroMax)
+            }
+            else{
+                if(messaggio === numeroIndovina){
+                    alert("hai vinto")
+                }else if(messaggio > numeroIndovina){
+                    alert("il numero è minore di " + messaggio)
+                }else if(messaggio < numeroIndovina){
+                    alert("il numero è maggiore di " + messaggio)
+                }
+            }
+
+            divMostra.innerHTML = messaggio + "--------" +typeof(messaggio)
+
+            inputMessaggi.value =''
+        }
+
+
+    </script>
+</body>
+</html>

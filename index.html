@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+        div{
+            height: 200px;
+            width: 200px;
+            border: 1px solid #000;
+        }*/
+
+    </style>
+</head>
+<body>
+    <div id="div_mostraNumero"></div>
+    <button id="btn_invia">invia</button>
+    <input type="text" id="input_messaggi">
+    <div id="div_mostra"></div>
+    
+    <script type="text/javascript" src="client.js"></script>
+
+
+    <script>
+/*
+        const TYPE_ENTER = 0;//rappresenta che c'è qlcn entrato
+        const TYPE_LEAVE = 1;//rappresenta che c'è qlcn andato
+        const TYPE_MSG = 2;//chat
+
+        var btnInvia = document.getElementById('btn_invia');
+        var divMostra = document.getElementById('div_mostra');
+        var inputMessaggi = document.getElementById('input_messaggi');
+        
+        //1.collegare con il server
+        var webSocket = new WebSocket('ws://localhost:8000')
+
+        //2.listen, se scopre che c'è qlcn connesso, allora:
+        webSocket.addEventListener('open',function(){
+            divMostra.innerHTML = 'connesso qualcuno'
+        })
+
+        //3.inviare messaggi dal client(browser) a server
+        btnInvia.addEventListener('click', function(){
+            var messaggio = inputMessaggi.value
+            webSocket.send(messaggio)
+            inputMessaggi.value = ''
+        })
+
+        //4. ricevere i messaggi inviati dal server
+        webSocket.addEventListener('message', function(messaggio){
+            //console.log(messaggio.data)
+            var data = JSON.parse(messaggio.data)//messaggio.data转换成对象
+            //divMostra.innerHTML = msg.data
+
+            //creare un div che salva i messaggi
+            var divSalva = document.createElement('div')
+            divSalva.innerText = data.msg + '---------' + data.time
+            if(data.type === TYPE_ENTER){
+                divSalva.style.color = 'green'
+            } else if(data.type === TYPE_LEAVE){
+                divSalva.style.color = 'red'
+            }else{
+                divSalva.style.color = 'blue'
+            }
+
+            //poi AGGIUNGERE i messeggi al div che mostra (e non aggiornare i messaggi, cioè cancellare i messaggi precedenti)
+            divMostra.appendChild(divSalva)
+        })
+
+        //5. close
+        webSocket.addEventListener('close', function(){
+            console.log("disconnesso")
+        })
+
+*/
+/*
+const TYPE_ENTER = 0;//rappresenta che c'è qlcn entrato
+const TYPE_LEAVE = 1;//rappresenta che c'è qlcn andato
+const TYPE_MSG = 2;//chat
+
+var btnInvia = document.getElementById('btn_invia');
+var divMostra = document.getElementById('div_mostra');
+var inputMessaggi = document.getElementById('input_messaggi');
+var divMostraNumero = document.getElementById('div_mostraNumero');
+
+//1.collegare con il server
+var webSocket = new WebSocket('ws://localhost:8000')
+
+//2.listen, se scopre che c'è qlcn connesso, allora:
+webSocket.addEventListener('open',function(){
+    divMostra.innerHTML = 'connesso qualcuno'
+})
+
+//3.inviare messaggi dal client(browser) a server
+btnInvia.addEventListener('click', function(){
+    var messaggio = inputMessaggi.value
+    webSocket.send(messaggio)
+    inputMessaggi.value = ''
+})
+
+//4. ricevere i messaggi inviati dal server
+webSocket.addEventListener('message', function(messaggio){
+    //console.log(messaggio.data)
+    var data = JSON.parse(messaggio.data)//messaggio.data转换成对象
+    //divMostra.innerHTML = msg.data
+
+    //creare un div che salva i messaggi
+    var divSalva = document.createElement('div')
+    divSalva.innerText = data.msg + '---------' + data.time
+    if(data.type === TYPE_ENTER){
+        divSalva.style.color = 'green'
+    } else if(data.type === TYPE_LEAVE){
+        divSalva.style.color = 'red'
+    }else{
+        divSalva.style.color = 'blue'
+    }
+
+    //poi AGGIUNGERE i messeggi al div che mostra (e non aggiornare i messaggi, cioè cancellare i messaggi precedenti)
+    divMostra.appendChild(divSalva)
+})
+
+//5. close
+webSocket.addEventListener('close', function(){
+    console.log("disconnesso")
+})
+*/
+
+    </script>
+</body>
+</html>

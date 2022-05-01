@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "nodejs-websocket": "^1.7.2",
+    "websocket": "^1.0.34"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "websocket-chat",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
